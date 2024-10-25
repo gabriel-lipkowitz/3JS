@@ -14,16 +14,9 @@
 // import { handleScroll, updatePosition, handleScrollTarget, updatePositionTarget } from './positionAlongPathTools/PositionAlongPathMethods.js'
 
 import * as THREE from 'three';
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import {GLTFLoader} from "https://unpkg.com/three@0.119.1/examples/jsm/loaders/GLTFLoader.js"
 import {Tween, Group} from 'https://unpkg.com/@tweenjs/tween.js@23.1.3/dist/tween.esm.js'
-// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-// import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.127/examples/jsm/loaders/GLTFLoader.js';
-import {GLTFLoader} from './GLTFLoader.js';
-
-
-
-
 
 
 const models = {
@@ -470,6 +463,35 @@ export async function initializeGlobe() {
         // .arcDashAnimateTime(arc => arc.arcDashAnimateTime)
         (document.getElementById('globeViz'));
 
+        const ptonTarget = new THREE.Vector3(-74.0416446700265904, 65.88, 20.2);
+        
+        const loaderB = new GLTFLoader();
+
+        loaderB.load(
+          // resource URL
+          './models/stanford.glb',
+          // called when the resource is loaded
+          function ( gltf ) {
+            // gltf.scene.scale.set(100,100,100)
+            gltf.scene.position.set(ptonTarget.x,ptonTarget.y,ptonTarget.z)
+            globe.scene().add( gltf.scene );
+        
+        
+          },
+          // called while loading is progressing
+          function ( xhr ) {
+        
+            console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+        
+          },
+          // called when loading has errors
+          function ( error ) {
+        
+            console.log( 'An error happened' );
+        
+          }
+        );
+        
         let camera_anim = gsap.timeline();
 
         function animateModelScaleSequential({label, increment, delay, duration}) {
@@ -629,7 +651,7 @@ sequentialArcs(cityPairs);
 
       const londonTarget = new THREE.Vector3(-2.0416446700265904, 82.88, 58.2);
       const cvilleTarget = new THREE.Vector3(-80.0416446700265904, 62.88, 16.2);
-      const ptonTarget = new THREE.Vector3(-74.0416446700265904, 65.88, 20.2);
+      
 
       const spline = new THREE.CatmullRomCurve3([
         cvilleTarget,
@@ -810,4 +832,3 @@ preloadModels(initializeGlobe);
 
     
     
-
