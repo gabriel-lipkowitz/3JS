@@ -19,7 +19,7 @@
 // import {Tween, Group} from 'https://unpkg.com/@tweenjs/tween.js@23.1.3/dist/tween.esm.js'
 
 import * as THREE from 'three';
-import Globe from 'globe.gl';
+// import Globe from 'https://unpkg.com/globe.gl';
 // import ThreeGlobe from 'three-globe'
 // import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
