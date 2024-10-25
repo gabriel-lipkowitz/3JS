@@ -19,7 +19,11 @@ import * as THREE from 'three';
 import {Tween, Group} from 'https://unpkg.com/@tweenjs/tween.js@23.1.3/dist/tween.esm.js'
 // import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 // import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.127/examples/jsm/loaders/GLTFLoader.js';
-import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {GLTFLoader} from './GLTFLoader.js';
+
+
+
+
 
 const models = {
     'stanford': './models/stanford.glb',
@@ -805,3 +809,4 @@ preloadModels(initializeGlobe);
 
     
     
+
