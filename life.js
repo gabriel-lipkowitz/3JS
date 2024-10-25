@@ -25,6 +25,7 @@ import {GLTFLoader} from './GLTFLoader.js';
 
 
 
+
 const models = {
     'stanford': './models/stanford.glb',
     'singapore': './models/singapore.glb',
