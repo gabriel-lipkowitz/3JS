@@ -14,7 +14,7 @@
 // import { handleScroll, updatePosition, handleScrollTarget, updatePositionTarget } from './positionAlongPathTools/PositionAlongPathMethods.js'
 
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from './GLTFLoader.js';
 // import {GLTFLoader} from "https://unpkg.com/three@0.119.1/examples/jsm/loaders/GLTFLoader.js"
 import {Tween, Group} from 'https://unpkg.com/@tweenjs/tween.js@23.1.3/dist/tween.esm.js'
 
@@ -464,7 +464,7 @@ export async function initializeGlobe() {
         (document.getElementById('globeViz'));
 
         const ptonTarget = new THREE.Vector3(-74.0416446700265904, 65.88, 20.2);
-        
+
         const loaderB = new GLTFLoader();
 
         loaderB.load(
