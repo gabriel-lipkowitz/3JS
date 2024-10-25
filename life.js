@@ -19,6 +19,7 @@ import { GLTFLoader } from './GLTFLoader.js';
 import {Tween, Group} from 'https://unpkg.com/@tweenjs/tween.js@23.1.3/dist/tween.esm.js'
 
 
+
 const models = {
     'stanford': './models/stanford.glb',
     'singapore': './models/singapore.glb',
